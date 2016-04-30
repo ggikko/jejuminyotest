@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="ko" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="ko">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>민요듣기 상세보기 - 제주특별자치도 문화/역사</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" type="image/ico" href="http://www.jeju.go.kr/favicon.ico" />
+
+	<meta property="og:locale" content="ko_KR" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://www.jeju.go.kr/" />
+	<meta property="og:image" content="http://www.jeju.go.kr/ogimage-jeju.png" />
+	<meta property="og:site_name" content="제주특별자치도청" />
+	<meta property="og:title" content="제주특별자치도" />
+	<meta property="og:description" content="자연·문화·사람의 가치를 키우는 제주" />
+
+	<link href="/pub/ca/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="/pub/css/no-responsive.css" rel="stylesheet" />
+	<link href="/pub/plugin/prettyphoto/css/prettyPhoto.css" rel="stylesheet" />
+	<link href="/pub/plugin/prettyGallery/css/prettyGallery.css" rel="stylesheet" type="text/css" media="screen" title="no title"/>
+	<link href="/pub/ca/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="/pub/plugin/fullcalendar/fullcalendar.min.css" rel="stylesheet" />
+	
+	<link href="/pub/css/common.css" rel="stylesheet" media="all" />
+	<link href="/pub/site/cul/css/common.css" rel="stylesheet" media="all" />
+
+	<!--[if lt IE 9]>
+	<script src="/pub/ca/crossbrowserjs/html5shiv.js"></script>
+	<script src="/pub/ca/crossbrowserjs/respond.min.js"></script>
+	<![endif]-->
+
+
+
+
+
+<meta charset="UTF-8">
+
+<style>
+	a.rtmp { display:block; width:300px; height:165px; margin:25px 0; text-align:center; background-color:black;}
+	a.rtmp > img {  width:300px !important; height:165px !important;}
+	.mb{ width: 300px; height: 30px;}
+</style>
+
+<link href="/pub/site/cul/css/sub.css" rel="stylesheet" media="all" />
+<link href="/pub/site/cul/css/contents.css" rel="stylesheet" media="all" />
+<link href="/pub/site/cul/css/culture.css" rel="stylesheet" media="all" />
+<link href="/pub/site/cul/css/culture02.css" rel="stylesheet" media="all" />
+<!-- <script src="/pub/site/cul/js/jquery.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		$('#randomize li').each(function(){
+			$(this).hide();
+		});
+		var min = 0;
+		var max = $('#randomize li').length;
+		var randomLi = Math.floor(Math.random() * (max - min)) + min;
+		$('#randomize li').eq(randomLi).show();
+		$('.whichLi').html(randomLi+1 +".   ");
+		
+		
+		$('#randomize_dialect li').each(function(){
+			$(this).hide();
+		});
+		var min_dialect = 0;
+		var max_dialect = $('#randomize_dialect li').length;
+		var randomLi_dialect = Math.floor(Math.random() * (max_dialect - min_dialect)) + min_dialect;
+		$('#randomize_dialect li').eq(randomLi_dialect).show();
+		$('.whichLi_dialect').html(randomLi_dialect+1 +".   ");
+		
+		
+		// This code helps to shuffle the li ...
+		(function($){
+		       $.fn.shuffle = function() {
+		         var elements = this.get()
+		         var copy = [].concat(elements)
+		         var shuffled = []
+		         var placeholders = []
+		         // Shuffle the element array
+		         while (copy.length) {
+		           var rand = Math.floor(Math.random() * copy.length)
+		           var element = copy.splice(rand,1)[0]
+		           shuffled.push(element)
+		         }
+
+		         // replace all elements with a plcaceholder
+		         for (var i = 0; i < elements.length; i++) {
+		           var placeholder = document.createTextNode('')
+		           findAndReplace(elements[i], placeholder)
+		           placeholders.push(placeholder)
+		         }
+
+		         // replace the placeholders with the shuffled elements
+		         for (var i = 0; i < elements.length; i++) {
+		           findAndReplace(placeholders[i], shuffled[i])
+		         }
+
+		         return $(shuffled)
+		       }
+
+		       function findAndReplace(find, replace) {
+		         find.parentNode.replaceChild(replace, find)
+		       }
+
+		       })(jQuery);
+
+		       // I am displying the 3 elements currently rest elements are hide.
+
+		       function listsort(){
+		       jQuery('#randomFolkParceList').each(function(index){
+		         jQuery(this).find('li').shuffle();
+		         jQuery(this).find('li').each(function(index){
+		           jQuery(this).show();
+		           if(index>=3){
+		             jQuery(this).hide();
+		           }
+		         });
+		       });
+		       }
+		       // first time call to function ...
+		       listsort();
+		       // calling the function after the 15seconds.. 
+		      /*  window.setInterval(function(){
+		         listsort();
+		       }, 15000);   */   
+	});
+</script>
+<style type="text/css">
+		#randomize > li{
+			display: none;
+		}
+		#randomize_dialect > li{
+			display: none;
+		} 
+		#randomFolkParceList > li{
+			display: none;
+		}
+		.box1{overflow: hidden;}
+	</style>
+
+
+</head>
+
+<body >
+
+ 	<div id="skipNav">
+		<p><a href="#contents">본문바로 가기</a></p>
+	</div>
+	<div id="headerWrap">
+		<div id="header" class="container">
+			<div class="topHeader">
+				<div class="pull-left">
+					<p class="jejuLogo"><a href="/"><img src="/pub/site/cul/images/common/util_logo.gif"  alt="jeju" /></a></p>
+					<p class="pageBaro"><a href="#">분야별 정보 바로가기 <span class="pageOnen"><img src="/pub/site/cul/images/common/util_icon.gif"  alt="분야별 정보 활성화 하기" /></span></a></p>
+				</div><!-- full-left -->
+				<ul class="pageList hiddenX">
+					<li><a href="/wel/index.htm"><img src="/pub/site/city/images/common/info01.png"  alt="복지/보건/여성" /><br/>복지/보건/여성</a></li>
+					<li><a href="/industry/index.htm"><img src="/pub/site/city/images/common/info02.png"  alt="경제/투자" /><br/>경제/투자</a></li>
+					<li><a href="/finance/index.htm"><img src="/pub/site/city/images/common/info03.png"  alt="예산/재정/세정" /><br/>예산/재정/세정</a></li>
+					<li><a href="/traffic/index.htm"><img src="/pub/site/city/images/common/info04.png"  alt="교통" /><br/>교통</a></li>
+					<li><a href="/edu/index.htm"><img src="/pub/site/city/images/common/info05.png"  alt="교육" /><br/>교육</a></li>
+					<li><a href="/culture/index.htm"><img src="/pub/site/city/images/common/info06.png"  alt="문화/역사" /><br/>문화/역사</a></li>
+					<li><a href="/city/index.htm"><img src="/pub/site/city/images/common/info07.png"  alt="도시계획/투자" /><br/>도시계획/토지</a></li>
+					<li><a href="/nature/index.htm"><img src="/pub/site/city/images/common/info08.png"  alt="환경" /><br/>환경</a></li>
+					<li><a href="/safe/index.htm"><img src="/pub/site/city/images/common/info09.png"  alt="재난/안전" /><br/>재난/안전</a></li>
+					<li><a href="/farm/index.htm"><img src="/pub/site/city/images/common/info10.png"  alt="농/축/수산" /><br/>농/축/수산</a></li>
+				</ul><!-- pageList -->
+				<p class="pageClose hiddenX"><a href="#"><img src="/pub/site/cul/images/common/util_icon_r.gif" alt="분야별 정보 닫기" /></a></p>
+				<div class="pull-right">
+				<h3 class="sr-only">유틸메뉴</h3>
+<ul class="util list-inline list-unstyled topUtil">
+<li><a href="/mypage/login.htm?act=nlogin" data-act="popup" data-width="785" data-height="600">비회원 로그인</a></li>
+<li><a href="/tool/sso/business.jsp?returnURL=%2Fculture%2Ffolklore%2FfolkSong%2Flisten.htm">로그인</a></li>
+<li><a href="/mypage/join.htm">회원가입</a></li>
+	<li><a href="/culture/sitemap.htm">사이트맵</a></li>
+</ul>
+
+<dl class="lang-select">
+  <dt><a title="언어선택목록 바로가기" href="#opt-lang">Language</a></dt>
+  <dd>
+    <a title="새창" target="_blank" href="#korean" onclick="window.open('http://www.jeju.go.kr/', 'winForeigner');return false;">한국어</a>
+    <a title="새창" target="_blank" href="#english" onclick="CSLI_ETGI_TRANS('http://www.jeju.go.kr/culture/folklore/folkSong/listen.htm?type=FKSH&amp;act=download&amp;link=%2FfolkSong%2F84d9d96a-9d18-4b37-b77d-2517666dc20e.mp4&amp;name=%EC%A4%91%ED%83%80%EB%A0%B9+%3A+%EC%9D%B4%EC%B0%BD%EC%88%9C', 'kte', 'web_0');return false;">English</a>
+    <a title="새창" target="_blank" href="#japanese" onclick="CSLI_ETGI_TRANS('http://www.jeju.go.kr/culture/folklore/folkSong/listen.htm?type=FKSH&amp;act=download&amp;link=%2FfolkSong%2F84d9d96a-9d18-4b37-b77d-2517666dc20e.mp4&amp;name=%EC%A4%91%ED%83%80%EB%A0%B9+%3A+%EC%9D%B4%EC%B0%BD%EC%88%9C', 'ktj', 'web_0');return false;">日本語</a>
+    <a title="새창" target="_blank" href="#chinese" onclick="CSLI_ETGI_TRANS('http://www.jeju.go.kr/culture/folklore/folkSong/listen.htm?type=FKSH&amp;act=download&amp;link=%2FfolkSong%2F84d9d96a-9d18-4b37-b77d-2517666dc20e.mp4&amp;name=%EC%A4%91%ED%83%80%EB%A0%B9+%3A+%EC%9D%B4%EC%B0%BD%EC%88%9C', 'ktc', 'web_0');return false;">中文</a>
+	<!--
+    <a title="새창" target="_blank" href="#english" onclick="window.open('http://english.jeju.go.kr/', 'winForeigner');return false;">English</a>
+    <a title="새창" target="_blank" href="#japanese" onclick="window.open('http://japanese.jeju.go.kr/', 'winForeigner');return false;">日本語</a>
+    <a title="새창" target="_blank" href="#chinese" onclick="window.open('http://chinese.jeju.go.kr/', 'winForeigner');return false;">中文</a>
+	-->
+    <a title="새창" target="_blank" href="http://english.jeju.go.kr/index.php/contents/residence/multilingual/for-works-family?mode=eng&amp;option=Thailand">Thailand</a>
+    <a title="새창" target="_blank" href="http://english.jeju.go.kr/index.php/contents/residence/multilingual/for-works-family?mode=eng&amp;option=Vietnamese">Vietnamese</a>
+    <a title="새창" target="_blank" href="http://english.jeju.go.kr/index.php/contents/residence/multilingual/for-works-family?mode=eng&amp;option=Indonesian">Indonesian</a>
+    <a title="새창" target="_blank" href="http://english.jeju.go.kr/index.php/contents/residence/multilingual/for-works-family?mode=eng&amp;option=Mongolian">Mongolian</a>
+    <a title="새창" target="_blank" href="http://english.jeju.go.kr/index.php/contents/residence/multilingual/for-works-family?mode=eng&amp;option=Cambodia">Cambodia</a>
+  </dd>
+</dl>					<!-- <ul class="topUtil">
+						<li><a href="#">로그인</a></li>
+						<li><a href="#">회원가입</a></li>
+						<li><a href="#">사이트맵</a></li>
+					</ul>
+					<form action="#" method="post">
+						<fieldset>
+							<legend></legend>
+							<input type="hidden" name="type" value="type" />
+							<script type='text/javascript' src='/pub/js/csli_tran_call.js'></script>
+							<script>
+							function foreigner(v) {
+								if(v=='#') { }
+								else if(v=='ENGLISH') {
+									CSLI_ETGI_TRANS('http://www.jeju.go.kr/', 'kte', 'web_3');
+								}
+								else if(v=='JAPANESE') {
+									CSLI_ETGI_TRANS('http://www.jeju.go.kr/', 'ktj', 'web_3');
+								}
+								else if(v=='CHINESE') {
+									CSLI_ETGI_TRANS('http://www.jeju.go.kr/', 'ktc', 'web_3');
+								}
+								else {
+									window.open(v);
+								}
+							}
+							</script>
+							<select title="언어 선택창" class="form-control languageSelect" onchange="foreigner(value);" >					
+								  <option value="#">Language</option>
+								  <option title="새창" target="_blank" value="ENGLISH">English</option>
+								  <option title="새창" target="_blank" value="JAPANESE">日本語</option>
+								  <option title="새창" target="_blank" value="CHINESE">中文</option>
+								  <option title="새창" target="_blank" value="http://english.jeju.go.kr/index.php/contents/residence/multilingual/for-works-family?mode=eng&amp;option=Thailand">Thailand</option>
+								  <option title="새창" target="_blank" value="http://english.jeju.go.kr/index.php/contents/residence/multilingual/for-works-family?mode=eng&amp;option=Vietnamese">Vietnamese</option>
+								  <option title="새창" target="_blank" value="http://english.jeju.go.kr/index.php/contents/residence/multilingual/for-works-family?mode=eng&amp;option=Indonesian">Indonesian</option>
+								  <option title="새창" target="_blank" value="http://english.jeju.go.kr/index.php/contents/residence/multilingual/for-works-family?mode=eng&amp;option=Mongolian">Mongolian</option>
+								  <option title="새창" target="_blank" value="http://english.jeju.go.kr/index.php/contents/residence/multilingual/for-works-family?mode=eng&amp;option=Cambodia">Cambodia</option>
+							</select>
+						</fieldset>
+					</form>-->
+				</div><!-- full-right -->
+			</div><!-- topHeader -->
+			<h1 class="pull-left"><a href="/culture/index.htm">문화/역사</a></h1>
+			<form class="pull-right topSearchForm" action="/tool/search/search.jsp" target="_blank">
+				<fieldset>
+					<div class="searchFormLeft">
+						<select title="통합 분류 선택" name="collection">
+							<option value="">통합검색</option>
+							<option value="webdoc">웹문서</option>
+							<option value="staff">직원/업무</option>
+						</select>
+						<input type="text" name="query" title="검색어 입력창" />
+					</div><!-- searchFormLeft -->
+					<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+				</fieldset>
+			</form><!-- topSearchForm -->
+		</div><!-- header -->
+		<div class="pageListBg hiddenX"></div>
+		<div id="gnb">
+			<div class="container">
+								   				<div class="menu menu01">
+										<h3><a href="/culture/culturalAssets.htm">제주의문화재</a></h3>
+										<div class="menuBg hiddenX">
+						<div class="container">
+													</div><!-- container -->
+					</div><!-- menuBg -->
+				</div><!-- menu -->
+				  				<div class="menu menu02">
+										<h3><a href="/culture/myth.htm">신화/전설</a></h3>
+										<div class="menuBg hiddenX">
+						<div class="container">
+														<ul>
+							   								<li>
+																	<a href="/culture/myth/mythInfo.htm">신화</a>
+																<!-- 
+																		<ul>
+									 																				<li><a href="/culture/myth/mythInfo/beganMyth.htm">개벽신화</a></li>
+																			  																				<li><a href="/culture/myth/mythInfo/openMyth.htm">개국신화</a></li>
+																			  																				<li><a href="/culture/myth/mythInfo/generalMyth.htm">일반신화</a></li>
+																			  																				<li><a href="/culture/myth/mythInfo/villageMyths.htm">당신화</a></li>
+																			 									</ul>
+																		-->
+								</li>
+							  								<li>
+																	<a href="/culture/myth/legend.htm">전설/민담/설화</a>
+																<!-- 
+																		<ul>
+									 																				<li><a href="/culture/myth/legend/legend01.htm">자청비</a></li>
+																			  																				<li><a href="/culture/myth/legend/legend02.htm">고종달이와 제주의혈</a></li>
+																			  																				<li><a href="/culture/myth/legend/legend03.htm">오백장군 이야기</a></li>
+																			  																				<li><a href="/culture/myth/legend/legend04.htm">유반석과 무반석</a></li>
+																			  																				<li><a href="/culture/myth/legend/legend05.htm">비양도(飛揚島)</a></li>
+																			  																				<li><a href="/culture/myth/legend/legend06.htm">대림선돌</a></li>
+																			  																				<li><a href="/culture/myth/legend/legend07.htm">당산봉 삼반석</a></li>
+																			  																				<li><a href="/culture/myth/legend/legend08.htm">좌랑못</a></li>
+																			  																				<li><a href="/culture/myth/legend/legend09.htm">절부암</a></li>
+																			  																				<li><a href="/culture/myth/legend/legend10.htm">막산이구석</a></li>
+																			  																				<li><a href="/culture/myth/legend/legend11.htm">수월봉</a></li>
+																			  																				<li><a href="/culture/myth/legend/legend12.htm">용수</a></li>
+																			  																				<li><a href="/culture/myth/legend/legend13.htm">명월천</a></li>
+																			  																				<li><a href="/culture/myth/legend/legend14.htm">김녕사굴</a></li>
+																			  																				<li><a href="/culture/myth/legend/legend15.htm">수산진성</a></li>
+																			 									</ul>
+																		-->
+								</li>
+							  								<li>
+																	<a class="long" href="/culture/myth/otherMyth.htm">그 밖의 신화/전설</a>
+																<!-- 
+																		-->
+								</li>
+							 							</ul>
+													</div><!-- container -->
+					</div><!-- menuBg -->
+				</div><!-- menu -->
+				  				<div class="menu menu03">
+										<h3><a href="/culture/history.htm">제주역사</a></h3>
+										<div class="menuBg hiddenX">
+						<div class="container">
+														<ul>
+							 								<li>
+																	<a href="/culture/history/history.htm">제주의역사</a>
+																<!-- 
+																		<ul>
+									 																				<li><a href="/culture/history/history/overview.htm">개요</a></li>
+																			  																				<li><a href="/culture/history/history/history01.htm">제주도연혁</a></li>
+																			  																				<li><a href="/culture/history/history/history02.htm">설립 취지ㆍ목적</a></li>
+																			  																				<li><a href="/culture/history/history/jejuHistory.htm">제주 100년 사진</a></li>
+																			 									</ul>
+																		-->
+								</li>
+							  								<li>
+																	<a href="/culture/history/period.htm">시대별 제주역사</a>
+																<!-- 
+																		<ul>
+									 																				<li><a href="/culture/history/period/period01.htm">선사시대역사</a></li>
+																			  																				<li><a href="/culture/history/period/period02.htm">탐라시대역사</a></li>
+																			  																				<li><a href="/culture/history/period/period03.htm">고려시대역사</a></li>
+																			  																				<li><a href="/culture/history/period/period04.htm">조선시대역사</a></li>
+																			  																				<li><a href="/culture/history/period/period05.htm">근현대사</a></li>
+																			 									</ul>
+																		-->
+								</li>
+							    								<li>
+																	<a href="/culture/history/person.htm">역사인물</a>
+																<!-- 
+																		-->
+								</li>
+							  								<li>
+																	<a href="/culture/history/hangmong.htm">항몽</a>
+																<!-- 
+																		<ul>
+									 																				<li><a href="/culture/history/hangmong/sambyeolcho.htm">강화도, 진도와 삼별초</a></li>
+																			  																				<li><a href="/culture/history/hangmong/jejuSambyeolcho.htm">제주와 삼별초</a></li>
+																			  																				<li><a href="/culture/history/hangmong/hangmongRemains.htm">항몽유적지</a></li>
+																			 									</ul>
+																		-->
+								</li>
+							  								<li>
+																	<a href="/culture/history/antiJapanese.htm">항일</a>
+																<!-- 
+																		<ul>
+									 																				<li><a href="/culture/history/antiJapanese/japanPlunder.htm">일제의 침탈</a></li>
+																			  																				<li><a href="/culture/history/antiJapanese/antijapanMovement.htm">항일운동</a></li>
+																			  																				<li><a href="/culture/history/antiJapanese/haenyoMovement.htm">해녀항일운동</a></li>
+																			  																				<li><a href="/culture/history/antiJapanese/marchFirst.htm">3.1운동</a></li>
+																			  																				<li><a href="/culture/history/antiJapanese/antijapanRemains.htm">항일유적(기념관)</a></li>
+																			 									</ul>
+																		-->
+								</li>
+							 							</ul>
+													</div><!-- container -->
+					</div><!-- menuBg -->
+				</div><!-- menu -->
+				  				<div class="menu menu04">
+										<h3><a href="/culture/folklore.htm">민속/문화</a></h3>
+										<div class="menuBg hiddenX">
+						<div class="container">
+														<ul>
+							 								<li>
+																	<a href="/culture/folklore/life.htm">의식주문화</a>
+																<!-- 
+																		<ul>
+									 																				<li><a href="/culture/folklore/life/clothes.htm">의복문화</a></li>
+																			  																				<li><a href="/culture/folklore/life/food.htm">음식문화</a></li>
+																			  																				<li><a href="/culture/folklore/life/dwelling.htm">주거문화</a></li>
+																			 									</ul>
+																		-->
+								</li>
+							  								<li>
+																	<a href="/culture/folklore/religious.htm">신앙문화</a>
+																<!-- 
+																		<ul>
+									 																				<li><a href="/culture/folklore/religious/religious01.htm">포제단</a></li>
+																			  																				<li><a href="/culture/folklore/religious/religious02.htm">당</a></li>
+																			  																				<li><a href="/culture/folklore/religious/religious03.htm">탑</a></li>
+																			  																				<li><a href="/culture/folklore/religious/religious04.htm">굿</a></li>
+																			  																				<li><a href="/culture/folklore/religious/religious05.htm">석상</a></li>
+																			 									</ul>
+																		-->
+								</li>
+							  								<li>
+																	<a href="/culture/folklore/samda.htm">삼다문화</a>
+																<!-- 
+																		<ul>
+									 																				<li><a href="/culture/folklore/samda/overview.htm">개요</a></li>
+																			  																				<li><a href="/culture/folklore/samda/stone.htm">돌문화</a></li>
+																			  																				<li><a href="/culture/folklore/samda/wind.htm">바람문화</a></li>
+																			  																				<li><a href="/culture/folklore/samda/women.htm">여성문화</a></li>
+																			  																				<li><a href="/culture/folklore/samda/showPlace.htm">삼다의명소</a></li>
+																			  																				<li><a href="/culture/folklore/samda/samdaArt.htm">삼다아트</a></li>
+																			  																				<li><a href="/culture/folklore/samda/samdaGallery.htm">삼다갤러리</a></li>
+																			 									</ul>
+																		-->
+								</li>
+							  								<li>
+																	<a href="/culture/folklore/folkSong.htm">제주민요</a>
+																<!-- 
+																		<ul>
+									 																				<li><a href="/culture/folklore/folkSong/overview.htm">개요</a></li>
+																			  																				<li><a href="/culture/folklore/folkSong/listen.htm">민요듣기</a></li>
+																			 									</ul>
+																		-->
+								</li>
+							  								<li>
+																	<a href="/culture/folklore/pungmul.htm">민속/풍물</a>
+																<!-- 
+																		-->
+								</li>
+							   							</ul>
+													</div><!-- container -->
+					</div><!-- menuBg -->
+				</div><!-- menu -->
+				  				<div class="menu menu05">
+										<h3><a href="/culture/dialect.htm">제주방언</a></h3>
+										<div class="menuBg hiddenX">
+						<div class="container">
+														<ul>
+							 								<li>
+																	<a href="/culture/dialect/lifeDialect.htm">생활방언</a>
+																<!-- 
+																		-->
+								</li>
+							  								<li>
+																	<a href="/culture/dialect/dictionary.htm">방언사전</a>
+																<!-- 
+																		-->
+								</li>
+							  								<li>
+																	<a href="/culture/dialect/proverb.htm">제주의속담</a>
+																<!-- 
+																		<ul>
+									 																				<li><a href="/culture/dialect/proverb/publish.htm">발간사</a></li>
+																			  																				<li><a href="/culture/dialect/proverb/proem.htm">머리말</a></li>
+																			  																				<li><a href="/culture/dialect/proverb/acquaint.htm">알아두기</a></li>
+																			  																				<li><a href="/culture/dialect/proverb/proverbDictionary.htm">속담사전</a></li>
+																			  																				<li><a href="/culture/dialect/proverb/sideProverb.htm">선외속담</a></li>
+																			  																				<li><a href="/culture/dialect/proverb/researcher.htm">제주도속담연구사</a></li>
+																			  																				<li><a href="/culture/dialect/proverb/notation.htm">제주어표기법</a></li>
+																			 									</ul>
+																		-->
+								</li>
+							  								<li>
+																	<a href="/culture/dialect/keyword.htm">색인어사전</a>
+																<!-- 
+																		-->
+								</li>
+							 							</ul>
+													</div><!-- container -->
+					</div><!-- menuBg -->
+				</div><!-- menu -->
+				  				<div class="menu menu06">
+										<h3><a href="/culture/art.htm">문화예술</a></h3>
+										<div class="menuBg hiddenX">
+						<div class="container">
+														<ul>
+							 								<li>
+																	<a href="/culture/art/cultureFacilities.htm">문화시설정보</a>
+																<!-- 
+																		<ul>
+									 																				<li><a href="/culture/art/cultureFacilities/facilitiesChart.htm">문화기반시설총괄표</a></li>
+																			  																				<li><a href="/culture/art/cultureFacilities/facilitiesData.htm">문화기반시설정보</a></li>
+																			 									</ul>
+																		-->
+								</li>
+							  								<li>
+																	<a href="/culture/art/culturePrize.htm">역대문화상</a>
+																<!-- 
+																		<ul>
+									 																				<li><a href="/culture/art/culturePrize/culturePrizeInfo.htm">문화상소개</a></li>
+																			  																				<li><a href="/culture/art/culturePrize/previousWinners.htm">역대수상자</a></li>
+																			 									</ul>
+																		-->
+								</li>
+							  								<li>
+																	<a href="/culture/art/specialStreet.htm">특화거리</a>
+																<!-- 
+																		<ul>
+									 																				<li><a href="/culture/art/specialStreet/street01.htm">서부두 명품횟집거리</a></li>
+																			  																				<li><a href="/culture/art/specialStreet/street02.htm">차 없는 거리(바오젠거리)</a></li>
+																			  																				<li><a href="/culture/art/specialStreet/street03.htm">국수문화거리</a></li>
+																			  																				<li><a href="/culture/art/specialStreet/street04.htm">방어축제거리</a></li>
+																			  																				<li><a href="/culture/art/specialStreet/street05.htm">칠십리음식특화거리</a></li>
+																			  																				<li><a href="/culture/art/specialStreet/street06.htm">명동로/이중섭거리</a></li>
+																			  																				<li><a href="/culture/art/specialStreet/street07.htm">아랑조을거리</a></li>
+																			  																				<li><a href="/culture/art/specialStreet/street08.htm">흑돼지거리</a></li>
+																			 									</ul>
+																		-->
+								</li>
+							 							</ul>
+													</div><!-- container -->
+					</div><!-- menuBg -->
+				</div><!-- menu -->
+				  				<div class="menu menu07">
+										<h3><a href="/culture/digitalContents.htm">디지털콘텐츠</a></h3>
+										<div class="menuBg hiddenX">
+						<div class="container">
+														<ul>
+							 								<li>
+																	<a href="/culture/digitalContents/directory.htm">디지털콘텐츠 검색</a>
+																<!-- 
+																		-->
+								</li>
+							  								<li>
+																	<a href="/culture/digitalContents/search.htm">상세검색</a>
+																<!-- 
+																		-->
+								</li>
+							  								<li>
+																	<a href="/culture/digitalContents/wardrobe.htm">장롱속민속자료</a>
+																<!-- 
+																		-->
+								</li>
+							 							</ul>
+													</div><!-- container -->
+					</div><!-- menuBg -->
+				</div><!-- menu -->
+				  				<div class="menu menu08">
+										<h3><a href="/culture/news.htm">알림마당</a></h3>
+										<div class="menuBg hiddenX">
+						<div class="container">
+													</div><!-- container -->
+					</div><!-- menuBg -->
+				</div><!-- menu -->
+				   				<p class="allMenuOpen"><a href="#"><i title="전체메뉴 열기"  class="fa fa-bars btn-open"></i></a></p>
+			</div><!-- container -->
+		</div><!-- gnb -->
+		<div id="allMenu" class="hiddenX">
+			<h2 class="for-reader">전체메뉴</h2>
+			<div class="container">
+				<div class="allMenuWrap">
+					<div class="allMenuTop">
+																																			<div class="menu menu01">
+									<h3>제주의문화재</h3>
+																	</div><!-- menu -->
+																																<div class="menu menu02">
+									<h3>신화/전설</h3>
+																		<ul>
+									   																					<li><a href="/culture/myth/mythInfo.htm">신화</a></li>
+																			  																					<li><a href="/culture/myth/legend.htm">전설/민담/설화</a></li>
+																			  																					<li><a href="/culture/myth/otherMyth.htm">그 밖의 신화/전설</a></li>
+																			 									</ul>
+																	</div><!-- menu -->
+																																<div class="menu menu03">
+									<h3>제주역사</h3>
+																		<ul>
+									 																					<li><a href="/culture/history/history.htm">제주의역사</a></li>
+																			  																					<li><a href="/culture/history/period.htm">시대별 제주역사</a></li>
+																			    																					<li><a href="/culture/history/person.htm">역사인물</a></li>
+																			  																					<li><a href="/culture/history/hangmong.htm">항몽</a></li>
+																			  																					<li><a href="/culture/history/antiJapanese.htm">항일</a></li>
+																			 									</ul>
+																	</div><!-- menu -->
+																																<div class="menu menu04">
+									<h3>민속/문화</h3>
+																		<ul>
+									 																					<li><a href="/culture/folklore/life.htm">의식주문화</a></li>
+																			  																					<li><a href="/culture/folklore/religious.htm">신앙문화</a></li>
+																			  																					<li><a href="/culture/folklore/samda.htm">삼다문화</a></li>
+																			  																					<li><a href="/culture/folklore/folkSong.htm">제주민요</a></li>
+																			  																					<li><a href="/culture/folklore/pungmul.htm">민속/풍물</a></li>
+																			   									</ul>
+																	</div><!-- menu -->
+														</div><!-- allMenuTop -->
+							<div class="allMenuBottom">
+																																<div class="menu menu05">
+									<h3>제주방언</h3>
+																		<ul>
+									 																					<li><a href="/culture/dialect/lifeDialect.htm">생활방언</a></li>
+																			  																					<li><a href="/culture/dialect/dictionary.htm">방언사전</a></li>
+																			  																					<li><a href="/culture/dialect/proverb.htm">제주의속담</a></li>
+																			  																					<li><a href="/culture/dialect/keyword.htm">색인어사전</a></li>
+																			 									</ul>
+																	</div><!-- menu -->
+																																<div class="menu menu06">
+									<h3>문화예술</h3>
+																		<ul>
+									 																					<li><a href="/culture/art/cultureFacilities.htm">문화시설정보</a></li>
+																			  																					<li><a href="/culture/art/culturePrize.htm">역대문화상</a></li>
+																			  																					<li><a href="/culture/art/specialStreet.htm">특화거리</a></li>
+																			 									</ul>
+																	</div><!-- menu -->
+																																<div class="menu menu07">
+									<h3>디지털콘텐츠</h3>
+																		<ul>
+									 																					<li><a href="/culture/digitalContents/directory.htm">디지털콘텐츠 검색</a></li>
+																			  																					<li><a href="/culture/digitalContents/search.htm">상세검색</a></li>
+																			  																					<li><a href="/culture/digitalContents/wardrobe.htm">장롱속민속자료</a></li>
+																			 									</ul>
+																	</div><!-- menu -->
+																																<div class="menu menu08">
+									<h3>알림마당</h3>
+																	</div><!-- menu -->
+																																		</div><!-- allMenuBottom -->
+				</div><!-- allMenuWrap -->
+			</div><!-- container -->
+			<p class="allMenuClose hiddenX"><a href="#"><i title="전체메뉴 닫기" class="fa fa-times btn-close"></i></a></p>
+		</div><!-- allMenu -->
+	</div><!-- headerWrap -->
+
+
+		<div class="container">
+		<div id="contentsWrap">
+		
+			<div class="leftContents">
+				<div class="leftTitle">
+					<h3>민속/문화</h3>
+					<p class="text">문화 / 역사</p>
+				</div><!-- leftTitle -->
+				<div class="leftMenu">
+					<ul class="list-unstyled">
+					 						<li class="">
+														<a href="/culture/folklore/life.htm">의식주문화</a>
+																					<ul class="list-unstyled">  																<li><a href="/culture/folklore/life/clothes.htm" class="">의복문화</a></li>
+															  																<li><a href="/culture/folklore/life/food.htm" class="">음식문화</a></li>
+															  																<li><a href="/culture/folklore/life/dwelling.htm" class="">주거문화</a></li>
+															 							</ul>
+													</li>
+					  						<li class="">
+														<a href="/culture/folklore/religious.htm">신앙문화</a>
+																					<ul class="list-unstyled">  																<li><a href="/culture/folklore/religious/religious01.htm" class="">포제단</a></li>
+															  																<li><a href="/culture/folklore/religious/religious02.htm" class="">당</a></li>
+															  																<li><a href="/culture/folklore/religious/religious03.htm" class="">탑</a></li>
+															  																<li><a href="/culture/folklore/religious/religious04.htm" class="">굿</a></li>
+															  																<li><a href="/culture/folklore/religious/religious05.htm" class="">석상</a></li>
+															 							</ul>
+													</li>
+					  						<li class="">
+														<a href="/culture/folklore/samda.htm">삼다문화</a>
+																					<ul class="list-unstyled">  																<li><a href="/culture/folklore/samda/overview.htm" class="">개요</a></li>
+															  																<li><a href="/culture/folklore/samda/stone.htm" class="">돌문화</a></li>
+															  																<li><a href="/culture/folklore/samda/wind.htm" class="">바람문화</a></li>
+															  																<li><a href="/culture/folklore/samda/women.htm" class="">여성문화</a></li>
+															  																<li><a href="/culture/folklore/samda/showPlace.htm" class="">삼다의명소</a></li>
+															  																<li><a href="/culture/folklore/samda/samdaArt.htm" class="">삼다아트</a></li>
+															  																<li><a href="/culture/folklore/samda/samdaGallery.htm" class="">삼다갤러리</a></li>
+															 							</ul>
+													</li>
+					  						<li class=" active ">
+														<a href="/culture/folklore/folkSong.htm">제주민요</a>
+																					<ul class="list-unstyled">  																<li><a href="/culture/folklore/folkSong/overview.htm" class="">개요</a></li>
+															  																<li><a href="/culture/folklore/folkSong/listen.htm" class=" active ">민요듣기</a></li>
+															 							</ul>
+													</li>
+					  						<li class="">
+														<a href="/culture/folklore/pungmul.htm">민속/풍물</a>
+																				</li>
+					   					</ul>
+				</div><!-- leftMenu -->
+			</div><!-- leftContents -->
+			
+			<div class="rightContents">
+				<div class="topContents">
+					<ol class="breadcrumb">
+						<li><a href="/cul/index.htm"><i class="fa fa-home"></i> HOME</a></li>
+																		<li><a href="/culture/folklore.htm">민속/문화</a></li>
+																		<li><a href="/culture/folklore/folkSong.htm">제주민요</a></li>
+																		<li class="active"><a href="/culture/folklore/folkSong/listen.htm">민요듣기</a></li>
+																	</ol>
+					<p class="print"><a href="/culture/folklore/folkSong/listen.htm?type=FKSH&amp;act=download&amp;link=%2FfolkSong%2F84d9d96a-9d18-4b37-b77d-2517666dc20e.mp4&amp;name=%EC%A4%91%ED%83%80%EB%A0%B9+%3A+%EC%9D%B4%EC%B0%BD%EC%88%9C&amp;_layout=playout&amp;_view=print" target="_blank" onclick="window.open(this.href, 'winPrint','width=770,height=600,scrollbars=yes');return false;"><i class="fa fa-print"></i> 인쇄하기</a></p>
+					<h2 class="page-title">
+													민요듣기
+											</h2>
+				</div><!-- topContents -->
+				
+								
+				<div id="mainContents">
+										
+										<div class="module-wrapper">
+	
+	<!--  folkSong detail -->
+	<div class="detailType02">
+		<h3></h3>
+		<dl>
+			<dt class="col-md-3">민요설명</dt>
+			<dd class="col-md-9"></dd>
+		</dl>
+		
+		<!-- 
+				<dl>
+			<dt class="col-md-3">VOD보기</dt>
+			<dd class="col-md-9">
+				<a class="rtmp" id="player"><img src="/pub/plugin/SpiderLivePlayer/img_play.jpg" alt="영상재생"  /></a>
+			</dd>
+		</dl>
+				 -->
+		<!-- 
+				<dl>	
+			<dt class="col-md-3">AUDIO듣기 </dt>
+			<dd class="col-md-9">
+				<a class="mb" style="display:block;" href="/files/folkSong/"></a>
+			</dd>
+		</dl>
+				 -->
+		 		
+		<dl>	
+			<dt class="col-md-3">다운로드</dt>
+			<dd class="col-md-9">
+							</dd>
+		</dl>
+		<dl>	
+			<dt class="col-md-3">재생시간</dt>
+			<dd class="col-md-9">
+											</dd>
+		</dl>
+		<dl>	
+			<dt class="col-md-3">가사정보</dt>
+			<dd class="col-md-9">
+				
+			</dd>
+		</dl>
+	</div>
+	<div class="btn-area"><a href="/culture/folklore/folkSong/listen.htm?type=FKSH&amp;link=%2FfolkSong%2F84d9d96a-9d18-4b37-b77d-2517666dc20e.mp4&amp;name=%EC%A4%91%ED%83%80%EB%A0%B9+%3A+%EC%9D%B4%EC%B0%BD%EC%88%9C" class="btn btn-default btn_cul"><i class="fa fa-arrow-left"></i> 목록</a></div>
+	<!--  //folkSong detail -->
+	
+<script src="/pub/js/board.js"></script>
+<script src="/pub/plugin/SpiderLivePlayer/flowplayer-3.2.13.min.js"></script>
+<script>
+	//동영상
+	var player = $f("a.rtmp", "http://releases.flowplayer.org/swf/flowplayer-3.2.18.swf", {
+		plugins: {
+	        pseudo: {
+	            url: "flowplayer.pseudostreaming-3.2.13.swf"
+	        }
+	    },
+	 
+	    clip: {
+	        provider: 'pseudo',
+	        url: '/files/folkSong/'
+	    }
+	});
+
+	var player = $f("a.rtmp", "/pub/plugin/SpiderLivePlayer/flowplayer-3.2.18.swf", {
+		
+		// configure both players to use rtmp plugin
+		clip: {
+			provider: 'rtmp'
+		},
+	
+		// here is our rtpm plugin configuration
+		plugins: {
+		  rtmp: {
+				url: "/pub/plugin/SpiderLivePlayer/flowplayer.rtmp-3.2.13.swf",
+				netConnectionUrl: 'rtmp://210.103.63.10/vod'
+		  }
+		}
+	});
+	
+	//음성
+	$f(".mb", "http://releases.flowplayer.org/swf/flowplayer-3.2.18.swf", {
+		//http://releases.flowplayer.org/swf/flowplayer-3.2.18.swf
+	    // fullscreen button not needed here
+	    plugins: {
+	        controls: {
+	            fullscreen: false,
+	            height: 30,
+	            autoHide: false
+	        }
+	    },
+	    // we also do not need the on-screen play button
+	    play: null,
+	    clip: {
+	        autoPlay: false,
+	        // optional: when playback starts close the first audio playback
+	        onBeforeBegin: function() {
+	            $f("player").close();
+	        }
+	    }
+	});
+</script>
+</div>
+										
+					
+<div class="clearfix"></div>
+
+
+<div id="contactUs" style="margin-top:20px;">
+	 	<dl>
+		<dt>담당부서</dt>
+		<dd>문화관광스포츠국&nbsp;문화정책과</dd>
+		<dt>담당자</dt>
+		<dd>김영란</dd>
+		<dt>연락처</dt>
+		<dd>064-710-3425</dd>
+	</dl>
+	 </div>
+
+
+
+<div id="pageSurvey" class="mb20">
+	<form action="/culture/folklore/folkSong/listen.score" method="post" target="menuScoreForm">
+	<input type="hidden" name="menu" value="309" />
+	<dl>
+		<dt>Q. 현재 페이지에서 제공되는 서비스에 대하여 만족하십니까?</dt>
+		<dd>
+			<fieldset>
+				<legend class="sr-only">만족도 조사</legend>
+				<ul class="list-unstyled list-inline">
+					<li>
+						<label for="emoticon5"><input type="radio" checked="checked" id="emoticon5" name="score" value="10" />매우만족</label>
+					</li>
+					<li>
+						<label for="emoticon4"><input type="radio" id="emoticon4" name="score" value="8" />만족</label>
+					</li>
+					<li>
+						<label for="emoticon3"><input type="radio" id="emoticon3" name="score" value="5" />보통</label>
+					</li>
+					<li>
+						<label for="emoticon2"><input type="radio" id="emoticon2" name="score" value="4" />불만족</label>
+					</li>
+					<li>
+						<label for="emoticon1"><input type="radio" id="emoticon1" name="score" value="2" />매우불만족</label>
+					</li>
+				</ul>
+				<div>
+					<label class="sr-only" for="survey">의견을 입력해주세요.</label>
+					<input type="text" class="pull-left" maxlength="200" name="opinion" id="survey" placeholder="기타 의견을 남겨주세요." />
+					<button type="submit" class="pull-right">등록</button>
+				</div>
+			</fieldset>
+		</dd>
+	</dl>
+	</form>
+</div>
+<iframe src="about:blank" title="메뉴 평가 처리 프레임" width="0" height="0" id="menuScoreForm" name="menuScoreForm"></iframe>
+					
+				</div><!-- mainContents -->
+				<div id="scrolltotop" style="display: block;"><a href="#top"><span><img src="/pub/site/cul/images/common/top.png" alt="탑으로" /></span></a></div>
+			</div><!-- rightContents -->
+		</div><!-- contentsWrap -->
+	</div><!-- container -->
+	
+
+	<div id="footer">
+		<div class="container">
+			<div class="page-link">
+				<h3 class="sr-only">홈페이지 바로가기</h3>
+				<div>
+																																																																																																																																																																																									<label class="sr-only" for="links1">Name</label>
+					<select id="links1">
+						<option value="#">실국홈페이지</option>
+												<option value="/group/part1.htm">총무과</option>
+												<option value="/group/part2.htm">기획조정실</option>
+												<option value="/group/part3.htm">안전관리실</option>
+												<option value="/group/part26.htm">공항확충지원본부</option>
+												<option value="/group/part18.htm">공항확충지원본부</option>
+												<option value="/group/part4.htm">특별자치행정국</option>
+												<option value="/group/part5.htm">문화관광스포츠국</option>
+												<option value="/group/part6.htm">국제자유도시건설교통국</option>
+												<option value="/group/part7.htm">보건복지여성국</option>
+												<option value="/group/part8.htm">환경보전국</option>
+												<option value="/group/part9.htm">경제산업국</option>
+												<option value="/group/part10.htm">농축산식품국</option>
+												<option value="/group/part11.htm">해양수산국</option>
+												<option value="/group/part12.htm">소방안전본부</option>
+												<option value="/group/part13.htm">국제통상국</option>
+												<option value="/group/part14.htm">소통정책관</option>
+												<option value="/group/part15.htm">의회협력담당관</option>
+												<option value="/group/part16.htm">민군복합형관광미항갈등해소지원단</option>
+												<option value="/group/part19.htm">골목상권살리기추진팀</option>
+												<option value="/group/part17.htm">특별자치제도추진단</option>
+												<option value="/group/part21.htm">축산진흥원</option>
+												<option value="/group/part22.htm">해양수산연구원</option>
+												<option value="/group/part23.htm">동물위생시험소</option>
+												<option value="/group/part24.htm">도로관리사업소</option>
+												<option value="/group/part25.htm">서울본부</option>
+												<option value="/group/part20.htm">보훈청</option>
+												<option value="/group/part27.htm">교통관광기획단</option>
+											</select>
+					<button type="submit" onclick="if($('#links1').val()!='#'){location.href=$('#links1').val();}">go</button>
+				</div>
+				<div class="link2">
+					<label for="links2" class="sr-only">직속/사업소/합의제</label>
+					<select id="links2">
+						<option value="#">직속/사업소/합의제</option>
+																		<option value="http://www.agri.jeju.kr">농업기술원</option>
+												<option value="http://www.edu.jeju.kr">인재개발원</option>
+												<option value="http://hei.jeju.go.kr">보건환경연구원</option>
+												<option value="http://www.jeju.go.kr/group/part20.htm">보훈청</option>
+												<option value="http://hangil.jeju.go.kr/">    제주항일기념관</option>
+												<option value="http://jeju.jeju119.go.kr">제주소방서</option>
+												<option value="http://seogwipo.jeju119.go.kr">서귀포소방서</option>
+												<option value="http://seobu.jeju119.go.kr">서부소방서</option>
+												<option value="http://dongbu.jeju119.go.kr">동부소방서</option>
+												<option value="http://jmp.jeju.go.kr">자치경찰단</option>
+												<option value="http://www.jejuwater.go.kr">수자원본부</option>
+												<option value="http://www.jejuculture.or.kr">문화예술진흥원</option>
+												<option value="http://museum.jeju.go.kr">민속자연사박물관</option>
+												<option value="http://www.hallasan.go.kr">한라산국립공원</option>
+												<option value="http://www.jeju.go.kr/group/part21.htm">축산진흥원</option>
+												<option value="http://www.jeju.go.kr/group/part22.htm">해양수산연구원</option>
+												<option value="http://www.jeju.go.kr/group/part23.htm">동물위생시험소</option>
+												<option value="http://www.jeju.go.kr/group/part24.htm">도로관리사업소</option>
+												<option value="http://www.jeju.go.kr/group/part25.htm">서울본부</option>
+												<option value="http://lib.jeju.go.kr/">공공도서관</option>
+												<option value="http://jmoa.jeju.go.kr">제주도립미술관</option>
+												<option value="http://swcenter.jeju.go.kr">설문대여성문화센터</option>
+												<option value="http://jejustonepark.com">돌문화공원관리사무소</option>
+												<option value="http://jeju.go.kr/edu/eng/office.htm">영어교육도시지원사무소</option>
+												<option value="http://www.work.go.kr/jeju">제주고용센터</option>
+												<option value="http://wnhcenter.jeju.go.kr">세계유산.한라산연구원</option>
+												<option value="http://audit.jeju.go.kr">감사위원회</option>
+												<option value="http://www.nlrc.go.kr/jeju.jsp">지방노동위원회</option>
+											</select>
+					<button type="submit" onclick="if($('#links2').val()!='#'){window.open($('#links2').val());}">go</button>
+				</div>
+				<div>
+					<label class="sr-only" for="links3">Name</label>
+					<select id="links3">
+					<option value="#">마을소개</option>
+																		<option value="http://jejuvill.net">제주의 마을</option>
+																		<option value="#">제주시</option>
+																		<option value="http://dodu.invil.org/">&nbsp; 도두동</option>
+																		<option value="#">한림읍</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3101/">&nbsp; 귀덕1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3102/">&nbsp; 귀덕2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3103/">&nbsp; 귀덕3리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3104/">&nbsp; 수원리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3105/">&nbsp; 한수리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3106/">&nbsp; 대림리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3107/">&nbsp; 한림1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3108/">&nbsp; 한림2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3109/">&nbsp; 한림3리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3110/">&nbsp; 강구리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3111/">&nbsp; 상대리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3112/">&nbsp; 동명리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3113/">&nbsp; 명월리</option>
+																		<option value="http://sangmyung.invil.org/">&nbsp; 상명리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3116/">&nbsp; 월림리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3114/">&nbsp; 금악리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3117/">&nbsp; 옹포리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3118/">&nbsp; 협재리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3119/">&nbsp; 금능리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3120/">&nbsp; 월령리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3121/">&nbsp; 비양리</option>
+																		<option value="#">애월읍</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3201/">&nbsp; 애월리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3202/">&nbsp; 곽지리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3203/">&nbsp; 금성리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3204/">&nbsp; 봉성리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3206/">&nbsp; 어음1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3207/">&nbsp; 어음2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3205/">&nbsp; 납읍리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3208/">&nbsp; 상가리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3209/">&nbsp; 하가리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3220/">&nbsp; 소길리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3219/">&nbsp; 장전리</option>
+																		<option value="http://yusuam.invil.org/">&nbsp; 유수암리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3211/">&nbsp; 신엄리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3212/">&nbsp; 중엄리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3213/">&nbsp; 구엄리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3214/">&nbsp; 용흥리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3210/">&nbsp; 고내리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3215/">&nbsp; 하귀1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3216/">&nbsp; 하귀2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3217/">&nbsp; 상귀리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3218/">&nbsp; 수산리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3221/">&nbsp; 고성1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3222/">&nbsp; 고성2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3224/">&nbsp; 광령1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3225/">&nbsp; 광령2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3226/">&nbsp; 광령3리</option>
+																		<option value="#">구좌읍</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3301/">&nbsp; 동복리</option>
+																		<option value="http://gimnyeong.invil.org/">&nbsp; 김녕리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3303/">&nbsp; 덕천리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3304/">&nbsp; 월정리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3305/">&nbsp; 행원리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3306/">&nbsp; 한동리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3307/">&nbsp; 평대리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3308/">&nbsp; 송당리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3309/">&nbsp; 세화리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3310/">&nbsp; 상도리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3311/">&nbsp; 하도리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3312/">&nbsp; 종달리</option>
+																		<option value="#">조천읍</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3401/">&nbsp; 신촌리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3402/">&nbsp; 조천리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3403/">&nbsp; 신흥리</option>
+																		<option value="http://www.gyoraeri.kr/">&nbsp; 교래리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3405/">&nbsp; 북촌리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3406/">&nbsp; 선흘1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3407/">&nbsp; 선흘2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3408/">&nbsp; 와산리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3409/">&nbsp; 대흘1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3410/">&nbsp; 대흘2리</option>
+																		<option value="http://waheul.invil.org/">&nbsp; 와흘리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3404/">&nbsp; 함덕리</option>
+																		<option value="#">한경면</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3501/">&nbsp; 판포리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3502/">&nbsp; 금등리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3506/">&nbsp; 한원리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3503/">&nbsp; 두모리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3504/">&nbsp; 신창리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3505/">&nbsp; 용당리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3514/">&nbsp; 용수리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3512/">&nbsp; 고산1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3513/">&nbsp; 고산2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3508/">&nbsp; 조수1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3509/">&nbsp; 조수2리</option>
+																		<option value="http://ninegood.go2vil.org/">&nbsp; 낙천리</option>
+																		<option value="http://jeoji.invil.org/">&nbsp; 저지리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3511/">&nbsp; 청수리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3515/">&nbsp; 산양리</option>
+																		<option value="#">추자면</option>
+																		<option value="http://chuja.invil.org/">&nbsp; 대서리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3602/">&nbsp; 영흥리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3603/">&nbsp; 묵리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3604/">&nbsp; 신양1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3605/">&nbsp; 신양2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3606/">&nbsp; 예초리</option>
+																		<option value="#">우도면</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3701/">&nbsp; 서광리</option>
+																		<option value="http://udo.invil.org/">&nbsp; 천진리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3703/">&nbsp; 조일리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/3704/">&nbsp; 오봉리</option>
+																		<option value="#">서귀포시</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2011/">&nbsp; 송산동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2092/">&nbsp; 서호동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2012/">&nbsp; 보목동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2093/">&nbsp; 호근동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2013/">&nbsp; 정방동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2094/">&nbsp; 새서귀포</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2014/">&nbsp; 중앙동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2101/">&nbsp; 강정동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2015/">&nbsp; 천지동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2102/">&nbsp; 용흥동</option>
+																		<option value="http://altosan.invil.org/">&nbsp; 토산2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2051/">&nbsp; 신효동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2103/">&nbsp; 도순동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2052/">&nbsp; 하효동</option>
+																		<option value="http://flower.invil.org/">&nbsp; 월평동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2061/">&nbsp; 토평동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2111/">&nbsp; 중문동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2062/">&nbsp; 상효1동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2112/">&nbsp; 대포동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2063/">&nbsp; 상효2동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2113/">&nbsp; 하원동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2064/">&nbsp; 법호촌동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2114/">&nbsp; 회수동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2065/">&nbsp; 돈내코</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2121/">&nbsp; 색달동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2071/">&nbsp; 동홍동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2122/">&nbsp; 상예1동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2081/">&nbsp; 서홍동</option>
+																		<option value="http://sangye.invil.org/">&nbsp; 상예2동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2091/">&nbsp; 법환동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2124/">&nbsp; 하예1동</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/2125/">&nbsp; 하예2동</option>
+																		<option value="#">대정읍</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4101/">&nbsp; 상모1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4102/">&nbsp; 상모2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4103/">&nbsp; 상모3리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4104/">&nbsp; 하모1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4105/">&nbsp; 하모2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4106/">&nbsp; 하모3리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4107/">&nbsp; 동일1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4108/">&nbsp; 동일2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4109/">&nbsp; 일과1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4110/">&nbsp; 일과2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4111/">&nbsp; 인성리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4112/">&nbsp; 안성리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4113/">&nbsp; 보성리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4114/">&nbsp; 신평리</option>
+																		<option value="http://gu.invil.org/">&nbsp; 구억리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4116/">&nbsp; 가파리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4117/">&nbsp; 마라리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4118/">&nbsp; 영락리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4119/">&nbsp; 무릉1리</option>
+																		<option value="http://utopia.invil.org/">&nbsp; 무릉2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4121/">&nbsp; 신도1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4122/">&nbsp; 신도2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4123/">&nbsp; 신도3리</option>
+																		<option value="http://jejuvill.net">&nbsp; 남원읍</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4209/">&nbsp; 남원1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4210/">&nbsp; 남원2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4203/">&nbsp; 태흥1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4204/">&nbsp; 태흥2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4205/">&nbsp; 태흥3리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4211/">&nbsp; 위미1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4212/">&nbsp; 위미2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4213/">&nbsp; 위미3리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4216/">&nbsp; 하례1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4217/">&nbsp; 하례2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4215/">&nbsp; 신례2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4214/">&nbsp; 신례1리</option>
+																		<option value="http://hannam.invil.org/">&nbsp; 한남리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4207/">&nbsp; 수망리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4206/">&nbsp; 의귀리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4201/">&nbsp; 신흥1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4202/">&nbsp; 신흥2리</option>
+																		<option value="#">성산읍</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4301/">&nbsp; 성산리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4302/">&nbsp; 오조리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4303/">&nbsp; 시흥리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4304/">&nbsp; 고성리</option>
+																		<option value="http://susan.invil.org/">&nbsp; 수산1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4306/">&nbsp; 수산2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4307/">&nbsp; 신양리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4308/">&nbsp; 온평리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4309/">&nbsp; 난산리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4310/">&nbsp; 신산리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4311/">&nbsp; 삼달1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4312/">&nbsp; 삼달2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4313/">&nbsp; 신풍리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4314/">&nbsp; 신천리</option>
+																		<option value="#">안덕면</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4401/">&nbsp; 화순리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4402/">&nbsp; 사계리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4403/">&nbsp; 덕수리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4404/">&nbsp; 서광서리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4405/">&nbsp; 서광동리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4406/">&nbsp; 동광리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4407/">&nbsp; 광평리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4408/">&nbsp; 상천리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4409/">&nbsp; 상창리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4410/">&nbsp; 창천리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4411/">&nbsp; 대평리</option>
+																		<option value="http://gamsan.invil.org/">&nbsp; 감산리</option>
+																		<option value="#">표선면</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4501/">&nbsp; 표선리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4502/">&nbsp; 하천리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4503/">&nbsp; 성읍1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4504/">&nbsp; 성읍2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4505/">&nbsp; 가시리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4506/">&nbsp; 세화1리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4507/">&nbsp; 세화2리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4508/">&nbsp; 세화3리</option>
+																		<option value="http://jejuvill.net/jejutown/domain-root/4509/">&nbsp; 토산1리</option>
+																	</select>
+					<button type="submit" onclick="if($('#links3').val()!='#'){window.open($('#links3').val());}">go</button>
+				</div>
+				<div>
+					<label class="sr-only" for="links4">Name</label>
+					<select id="links4">
+					<option value="#">정보화마을</option>
+																		<option value="#">제주시</option>
+																		<option value="http://eyp.invil.org/">&nbsp; 영평마을</option>
+																		<option value="http://gimnyeong.invil.org/">&nbsp; 김녕해녀마을</option>
+																		<option value="http://jeoji.invil.org/">&nbsp; 저지예술마을</option>
+																		<option value="http://yusuam.invil.org/">&nbsp; 유수암마을</option>
+																		<option value="http://waheul.invil.org/">&nbsp; 와흘메밀마을</option>
+																		<option value="http://chuja.invil.org/">&nbsp; 추자참굴비마을</option>
+																		<option value="http://sangmyung.invil.org/">&nbsp; 상명정낭마을</option>
+																		<option value="http://dodu.invil.org/">&nbsp; 섬머리도두마을</option>
+																		<option value="http://udo.invil.org/">&nbsp; 우도유채꽃마을</option>
+																		<option value="#">서귀포시</option>
+																		<option value="http://sangye.invil.org/">&nbsp; 상예마을</option>
+																		<option value="http://altosan.invil.org/">&nbsp; 알토산마을</option>
+																		<option value="http://flower.invil.org/">&nbsp; 월평화훼마을</option>
+																		<option value="http://hannam.invil.org/">&nbsp; 한남감귤마을</option>
+																		<option value="http://gamsan.invil.org/">&nbsp; 감산계곡마을</option>
+																		<option value="http://susan.invil.org/">&nbsp; 수산마을</option>
+																		<option value="http://gu.invil.org/">&nbsp; 구억마을</option>
+																		<option value="http://utopia.invil.org/">&nbsp; 무릉도원마을</option>
+																	</select>
+					<button type="submit" onclick="if($('#links4').val()!='#'){window.open($('#links4').val());}">go</button>
+				</div>
+				<div>
+					<label class="sr-only" for="links5">Name</label>
+						<select id="links5">
+						<option value="#">유관기관</option>
+																		<option value="http://www.jjpolice.go.kr/">제주지방경찰청</option>
+												<option value="http://www.mma.go.kr/kor/l_jeju/index.html">제주지방병무청</option>
+												<option value="http://www.kcg.go.kr/jh/jeju/index.jsp">제주해양경찰서</option>
+												<option value="http://www.jje.go.kr">도교육청</option>
+												<option value="http://www.jejumed.com/">제주의료원</option>
+												<option value="http://www.smed.or.kr/">서귀포의료원</option>
+												<option value="http://www.jpdc.co.kr/">도개발공사</option>
+												<option value="http://ijto.or.kr/">제주관광공사</option>
+												<option value="http://www.jejuenergy.or.kr">제주에너지공사</option>
+												<option value="http://www.jdcenter.com">국제자유도시 개발센터</option>
+												<option value="http://www.jba.or.kr ">도 경제통상진흥원</option>
+												<option value="http://jejucvb.or.kr">제주컨벤션뷰로</option>
+												<option value="http://www.iccjeju.co.kr/">제주국제컨벤션센터</option>
+												<option value="http://www.jejutp.or.kr/">제주테크노파크</option>
+												<option value="http://visitjeju.or.kr ">도관광협회</option>
+												<option value="http://www.citrus.or.kr/">감귤출하연합회</option>
+												<option value="http://www.jejusports.or.kr/ ">도체육회</option>
+												<option value="http://www.jdi.re.kr/">제주발전연구원</option>
+												<option value="http://jile.or.kr/">제주평생교육진흥원</option>
+												<option value="http://jejufc.or.kr/">제주영상위원회</option>
+												<option value="http://woman-spc.jeju.go.kr/">여성특별위원회</option>
+												<option value="http://kostat.go.kr/portal/korea/index.action">제주통계사무소</option>
+												<option value="http://www.jcaf.or.kr/">제주문화예술재단</option>
+												<option value="http://www.jejusinbo.co.kr">제주신용보증재단</option>
+												<option value="http://www.jeju43peace.or.kr/">제주4.3평화재단</option>
+												<option value="http://ipf.or.kr/">국제평화재단</option>
+												<option value="http://genius.ejeju.net">탐라영재관</option>
+												<option value="http://www.jejuiworld.com/">아이낳기 좋은세상 제주운동본부</option>
+												<option value="http://ccei.creativekorea.or.kr/jeju/">제주창조경제혁신센터</option>
+											</select>
+					<button type="submit" onclick="if($('#links5').val()!='#'){window.open($('#links5').val());}">go</button>
+				</div>
+			</div><!-- page-link -->
+			<ul class="list-unstyled">
+				<li><a href="/help/sitemap.htm">사이트도우미</a></li>
+				<li><a href="/help/policy/policy.htm">개인정보처리방침</a></li>
+				<li><a href="/help/policy/copyright.htm">저작권보호정책</a></li>
+				<li><a href="/help/policy/cctv.htm">영상정보처리기기운영관리방침</a></li>
+				<li><a href="/help/opinion.htm">홈페이지개선의견</a></li>
+				<li><a href="/ahnlap.html" target="_blank">바이러스무료검사</a></li>
+				<li><a href="/help/sitemap.htm">사이트맵</a></li>
+				<li><a href="/jeju/jeju/map.htm">찾아오시는길</a></li>
+			</ul>
+			<address>
+				Copyright 2015 제주특별자치도. All rights reserved<br />
+(63122) 제주특별자치도 제주시 문연로 6(연동) 대표전화:064-120<br />
+6 Munnyeon-ro Jeju-si, Jeju, Republic of Korea 63122 Tel. 82-64-120			</address>
+			<p class="icon1"><img alt="웹접근성 인증마크" src="/pub/site/cul/images/common/icon_wa.png"></p>
+			<p class="icon2"><img alt="QR코드" src="/pub/site/cul/images/common/icon_qr.png"></p>
+		</div><!-- container -->
+	</div><!-- footer -->
+
+<script src="/pub/ca/plugins/jquery/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/pub/ca/plugins/jquery-bxslider/jquery.bxslider.js"></script> 
+<script src="/pub/ca/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/pub/site/cul/js/layout.js"></script>
+
+<script type="text/javascript" src="https://maps.google.co.kr/maps/api/js?v=3.exp&amp;region=KR"></script>
+<script src="/pub/plugin/prettyphoto/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+<script src="/pub/plugin/prettyGallery/js/jquery.prettyGallery.js" type="text/javascript" charset="utf-8"></script>
+<script src="/pub/ca/plugins/jquery-dotdotdot/jquery.dotdotdot.min.js"></script>
+<script src="/pub/plugin/SpiderLivePlayer/flowplayer-3.2.13.min.js"></script>
+<script src="/pub/js/calendar.js"></script>
+
+
+
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function(){
+   	  
+   		/* 지도 컨텐츠 삽입
+   		<div class="mapBox">
+		<div class="map-in">
+		<div id="mapContainer" style="width: 100%; height: 400px;">&nbsp;</div>		
+		<p><input id="xSec" type="hidden" value="33.4527177" /> <input id="ySec" type="hidden" value="126.5180383" /></p>
+		</div>
+		</div>
+ 		*/
+ 		var xSec = $("div #xSec").val();	//위도
+		var ySec = $("div #ySec").val();	//경도
+		
+		if(xSec != null && ySec != null){
+			google.maps.event.addDomListener(window, 'load', initialize);
+		}
+		
+	   	  /* 갤러리 컨텐츠 삽입
+			<p>
+	   	  	   <a href="/pub/site/wel/images/main/ban_01.png" rel="prettyPhoto[myGallery]" title="Cocoa Pod">
+			   <img alt="picture of cocoa pod split open" src="/pub/site/wel/images/main/ban_01.png" />
+			   </a> 
+			   <a href="/pub/site/wel/images/main/ban_01.png" rel="prettyPhoto[myGallery]" title="Cocoa Pod">
+			   <img alt="picture of cocoa pod split open" src="/pub/site/wel/images/main/ban_01.png" /> 
+			   </a> 
+			   <a href="/pub/site/wel/images/main/ban_01.png" rel="prettyPhoto[myGallery]" title="Cocoa Pod">
+			   <img alt="picture of cocoa pod split open" src="/pub/site/wel/images/main/ban_01.png" /> 
+			   </a>
+			</p>
+	   	  */
+   	  
+		$("a[rel^='prettyPhoto']").prettyPhoto({social_tools:''});
+		//$(“a[rel^=’prettyPhoto’]”).prettyPhoto({theme: ‘facebook’,slideshow:5000, autoplay_slideshow:true});
+
+     });
+	
+	function initialize(){
+
+	    if($("#mapContainer").length) {
+	    	
+			var x = $("div #xSec").val();	//위도
+			var y = $("div #ySec").val();	//경도
+		
+		    var mapOptions = { 											//구글 맵 옵션 설정
+		        zoom : 16, 												//기본 확대율
+		        center : new google.maps.LatLng(x, y), 					//지도 중앙 위치
+		        scrollwheel : true, 								 	//마우스 휠로 확대 축소 사용 여부
+		        mapTypeControl : false 									//맵 타입 컨트롤 사용 여부
+		    };
+	
+		    var map = new google.maps.Map(document.getElementById('mapContainer'), mapOptions); 
+
+		    var marker = new google.maps.Marker({ 
+		        map : map,
+		        position : map.getCenter(), 
+		    });
+		
+		    google.maps.event.addListener(map, 'click', function(event) {
+				var lat = event.latLng.lat();
+				var lng = event.latLng.lng();
+				map.setCenter(event.latLng);
+				marker.setPosition(event.latLng);
+			});
+	    }
+	}
+	
+</script>
+<script>
+$('#linkContents').bxSlider({
+			autoStart:false,
+			autoControls:true,
+			pager:false,
+			nextSelector: '#slider-next2',
+			prevSelector: '#slider-prev2',
+			autoControlsSelector: '#slider-stop2',
+			autoControlsCombine:'false',
+			auto:false,
+			startText:'<i class="fa fa-play play_silder"></i>',
+			stopText: '<i class="fa fa-pause pause_silder"></i>',
+			nextText:'<i class="fa fa-chevron-right"></i>',
+			prevText:'<i class="fa fa-chevron-left"></i>',
+			slideMargin: 0
+		});
+</script>
+<!-- 
+<p><a class="rtmp" href="mp4:/myth/122_kor_1.mp4" id="player">
+<img alt="영상재생" src="/pub/plugin/SpiderLivePlayer/img_play.jpg" /></a></p>
+ -->
+ <!-- 
+<p><a class="rtmp" href="mp4:/myth/122_kor_1.mp4" id="player1">
+<img alt="영상재생" src="/pub/plugin/SpiderLivePlayer/img_play.jpg" /></a></p>
+ -->
+<script>
+	//동영상
+	var player = $f("a.rtmp", "/pub/plugin/SpiderLivePlayer/flowplayer-3.2.18.swf", {
+		
+		// configure both players to use rtmp plugin
+		clip: {
+			provider: 'rtmp',
+			autoPlay: false,
+		    autoBuffering: true
+		},
+	
+		// here is our rtpm plugin configuration
+		plugins: {
+		  rtmp: {
+				url: "/pub/plugin/SpiderLivePlayer/flowplayer.rtmp-3.2.13.swf",
+				netConnectionUrl: 'rtmp://210.103.63.10/vod'
+		  }
+		}
+	});
+	
+	//동영상
+	var player1 = $f("a.rtmp", "/pub/plugin/SpiderLivePlayer/flowplayer-3.2.18.swf", {
+		
+		// configure both players to use rtmp plugin
+		clip: {
+			provider: 'rtmp',
+			autoPlay: false,
+		    autoBuffering: true
+		},
+	
+		// here is our rtpm plugin configuration
+		plugins: {
+		  rtmp: {
+				url: "/pub/plugin/SpiderLivePlayer/flowplayer.rtmp-3.2.13.swf",
+				netConnectionUrl: 'rtmp://210.103.63.10/vod'
+		  }
+		}
+	});
+	
+</script>
+
+
+</body>
+</html>
